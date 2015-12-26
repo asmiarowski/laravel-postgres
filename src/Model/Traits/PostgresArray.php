@@ -35,8 +35,8 @@ trait PostgresArray
     /**
      * Where database array $column has all of the elements in $value
      * @param Builder $query
-     * @param $column
-     * @param $value
+     * @param string $column
+     * @param mixed $value
      * @return Builder
      */
     public function scopeWherePgArrayContains(Builder $query, $column, $value)
