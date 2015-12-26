@@ -2,7 +2,7 @@
 
 namespace Smiarowski\Postgres\Model\Traits;
 
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 
 trait PostgresArray
 {
