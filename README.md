@@ -30,7 +30,7 @@ public function getArrayField()
 }
 ```
 <p>Query scopes available for builder:</p>
-<p>```wherePgArrayContains(string $column, mixed $value)```: Adds where query part, $column has all of the elements in $value. $value can be array, integer or string</p>
+<p>`wherePgArrayContains(string $column, mixed $value)`: Adds where query part, $column has all of the elements in $value. $value can be array, integer or string</p>
 </p>`wherePgArrayOverlap(string $column, mixed $value)`: Adds where query part, $column has any (at least one) of the elements in $value. $value can be array, integer or string</p>
 
 <p>For example, let's say you have an array of strings as tags for restaurants. If you would want to find all restaurants that serve pizza or lasagne, you would build your query like so:</p>
