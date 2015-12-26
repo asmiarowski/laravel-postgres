@@ -1,0 +1,27 @@
+{
+    "name": "asmiarowski/laravel-postgres",
+    "description": "Eloquent support for postgreSQL fields",
+    "keywords": ["laravel", "postgres", "postgreSQL"],
+    "license": "MIT",
+    "require": {
+        "laravel/framework": "^5.2",
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^2.4"
+    },
+    "suggest": {
+        "barryvdh/laravel-ide-helper": "Adds IDE autocomplete to query builders through php artisan ide-helper:models"
+    },
+    "autoload": {
+        "psr-4": {
+            "Smiarowski\\Postgres\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Artur Śmiarowski",
+            "email": "artur.smiarowski@gmail.com"
+        }
+    ]
+}
