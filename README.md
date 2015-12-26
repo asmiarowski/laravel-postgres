@@ -30,11 +30,11 @@ public function getArrayField()
 }
 ```
 <p>Query scopes available for builder:</p>
-<p>*wherePgArrayContains(string $column, mixed $value)*: Adds where query part, $column has all of the elements in $value. $value can be array, integer or string</p>
-<p>*wherePgArrayOverlap(string $column, mixed $value)*: Adds where query part, $column has any (at least one) of the elements in $value. $value can be array, integer or string</p>
+<p><b>wherePgArrayContains(string $column, mixed $value)</b>: Adds where query part, $column has all of the elements in $value. $value can be array, integer or string</p>
+<p><b>wherePgArrayOverlap(string $column, mixed $value)</b>: Adds where query part, $column has any (at least one) of the elements in $value. $value can be array, integer or string</p>
 
 <p>For example, let's say you have an array of strings as tags for restaurants. If you would want to find all restaurants that serve pizza or lasagne, you would build your query like so:</p>
 ```
 $restaurants = Restaurant::wherePgArrayOverlap('tag', ['pizza', 'lasagne'])->get();
 ```
-<p>Above example would return only thoes restaurants that have tags pizza *or* lasagne in their defined tags field. If you would want only restaurants that have all of the tags specified, you would use *wherePgArrayContains* instead.</p>
+<p>Above example would return only thoes restaurants that have tags pizza <b>or</b> lasagne in their defined tags field. If you would want only restaurants that have all of the tags specified, you would use <b>wherePgArrayContains</b> instead.</p>
