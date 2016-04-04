@@ -29,7 +29,7 @@ trait PostgresArray
     {
         $value = str_replace('{', '[', str_replace('}', ']', $value));
 
-        return json_decode($value);
+        return explode(',', $value);
     }
 
     /**
