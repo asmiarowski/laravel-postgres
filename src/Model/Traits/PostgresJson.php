@@ -1,15 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: artur
- * Date: 26.12.15
- * Time: 17:32
- */
 
 namespace Smiarowski\Postgres\Model\Traits;
 
+use Illuminate\Database\Eloquent\Builder;
+use Smiarowski\Postgres\Helper;
 
 trait PostgresJson
 {
+
 
 }

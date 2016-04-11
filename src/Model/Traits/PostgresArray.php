@@ -3,6 +3,7 @@
 namespace Smiarowski\Postgres\Model\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
+use Smiarowski\Postgres\Helper;
 
 trait PostgresArray
 {
@@ -14,10 +15,7 @@ trait PostgresArray
      */
     public static function mutateToPgArray(array $array)
     {
-        $array = self::removeKeys($array);
-        $array = json_encode($array);
-
-        return str_replace('[', '{', str_replace(']', '}', $array));
+        return Helper::phpArrayToPostgresArray($array);
     }
 
     /**
@@ -41,7 +39,7 @@ trait PostgresArray
      */
     public function scopeWherePgArrayContains(Builder $query, $column, $value)
     {
-        $value = self::mutateToPgArray((array) $value);
+        $value = self::mutateToPgArray((array)$value);
 
         return $query->whereRaw("$column @> ?", [$value]);
     }
@@ -55,26 +53,9 @@ trait PostgresArray
      */
     public function scopeWherePgArrayOverlap(Builder $query, $column, $value)
     {
-        $value = self::mutateToPgArray((array) $value);
+        $value = self::mutateToPgArray((array)$value);
 
         return $query->whereRaw("$column && ?", [$value]);
     }
-
-    /**
-     * Remove named keys from arrays
-     * @param array $array
-     * @return array
-     */
-    private static function removeKeys(array $array)
-    {
-        $array = array_values($array);
-        foreach ($array as &$value)
-        {
-            if (is_array($value)) $value = static::removeKeys($value);
-        }
-
-        return $array;
-    }
-
 
 }

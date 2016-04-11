@@ -8,7 +8,8 @@
         "php": ">=5.5.9"
     },
     "require-dev": {
-        "phpspec/phpspec": "^2.4"
+        "phpspec/phpspec": "^2.4",
+        "henrikbjorn/phpspec-code-coverage": "^2.0"
     },
     "suggest": {
         "barryvdh/laravel-ide-helper": "Adds IDE autocomplete to query builders through php artisan ide-helper:models"

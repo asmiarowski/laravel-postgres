@@ -3,3 +3,5 @@ suites:
         namespace: Smiarowski\Postgres
         psr4_prefix: Smiarowski\Postgres
         src_path: src
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
