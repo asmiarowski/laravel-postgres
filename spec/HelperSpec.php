@@ -14,7 +14,7 @@ class HelperSpec extends ObjectBehavior
 
     function it_should_change_array_format()
     {
-        $this->phpArrayToPostgresArray(['test', 'test2', 'test3'])->shouldReturn('{"test","test2","test3"}');
+        $this->phpArrayToPostgresArray(['test', 'test2', 'test3'])->shouldReturn('{test,test2,test3}');
         $this->phpArrayToPostgresArray([0, 1, 2])->shouldReturn('{0,1,2}');
     }
 

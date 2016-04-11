@@ -13,7 +13,7 @@ class Helper
         $array = self::removeKeys($array);
         $array = json_encode($array);
 
-        return str_replace('[', '{', str_replace(']', '}', $array));
+        return str_replace('[', '{', str_replace(']', '}', str_replace('"', '', $array)));
     }
 
     /**
